@@ -1,50 +1,60 @@
 import {createStore, compose, applyMiddleware} from 'redux';
+import {createLogger} from 'redux-logger';
+import createSagaMiddleware, {END} from 'redux-saga';
+import sagas from '../sagas';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
-import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
+const loggerMiddleware = createLogger();
+const sagaMiddleware = createSagaMiddleware();
+
 function configureStoreProd(initialState) {
-  const middlewares = [
-    // Add other middleware on this line...
+    const middlewares = [
+        // Add other middleware on this line...
 
-    // thunk middleware can also accept an extra argument to be passed to each thunk action
-    // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument
-    thunk,
-  ];
+        sagaMiddleware
+    ];
 
-  return createStore(rootReducer, initialState, compose(
-    applyMiddleware(...middlewares)
-    )
-  );
+    const store = createStore(rootReducer, initialState, compose(
+        applyMiddleware(...middlewares)
+        )
+    );
+
+    sagaMiddleware.run(sagas);
+    store.close = () => store.dispatch(END);
+
+    return store;
 }
 
 function configureStoreDev(initialState) {
-  const middlewares = [
-    // Add other middleware on this line...
+    const middlewares = [
+        // Add other middleware on this line...
 
-    // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
-    reduxImmutableStateInvariant(),
+        // Redux middleware that spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.
+        reduxImmutableStateInvariant(),
 
-    // thunk middleware can also accept an extra argument to be passed to each thunk action
-    // https://github.com/gaearon/redux-thunk#injecting-a-custom-argument
-    thunk,
-  ];
+        sagaMiddleware,
+        loggerMiddleware
+    ];
 
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools
-  const store = createStore(rootReducer, initialState, composeEnhancers(
-    applyMiddleware(...middlewares)
-    )
-  );
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools
+    const store = createStore(rootReducer, initialState, composeEnhancers(
+        applyMiddleware(...middlewares)
+        )
+    );
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers').default; // eslint-disable-line global-require
-      store.replaceReducer(nextReducer);
-    });
-  }
+    if (module.hot) {
+        // Enable Webpack hot module replacement for reducers
+        module.hot.accept('../reducers', () => {
+            const nextReducer = require('../reducers').default; // eslint-disable-line global-require
+            store.replaceReducer(nextReducer);
+        });
+    }
 
-  return store;
+    sagaMiddleware.run(sagas);
+    store.close = () => store.dispatch(END);
+
+    return store;
 }
 
 const configureStore = process.env.NODE_ENV === 'production' ? configureStoreProd : configureStoreDev;
