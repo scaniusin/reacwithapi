@@ -13,6 +13,9 @@ let NavBar = (props) => {
           Welcome back {auth.username}
         </NavItem>
         <NavItem>
+          <NavLink tag={Link} to="/profile">Profile</NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink tag={Link} to="/logout">Logout</NavLink>
         </NavItem>
       </Nav>

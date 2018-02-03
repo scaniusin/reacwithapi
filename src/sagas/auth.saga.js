@@ -1,4 +1,4 @@
-import * as api from '../connectivity/api';
+import * as api from '../connectivity/api.auth';
 import {call, put} from 'redux-saga/effects';
 import {takeLatest} from 'redux-saga';
 import jwtDecode from 'jwt-decode';
@@ -8,6 +8,13 @@ import * as types from '../constants/actionTypes';
 export function *doLogin(action) {
 
   try {
+
+    yield put({
+      type: types.REQUEST__STARTED,
+      payload: {
+        requestFrom: 'authSaga.doLogin'
+      }
+    });
 
     const {username, password} = action.payload;
 
@@ -31,6 +38,15 @@ export function *doLogin(action) {
       payload: {
         message: e.message,
         statusCode: e.statusCode
+      }
+    });
+
+  } finally {
+
+    yield put({
+      type: types.REQUEST__FINISHED,
+      payload: {
+        sendingRequest: true
       }
     });
 
@@ -58,7 +74,8 @@ export function *doLoginSucceeded(action) {
     type: types.LOGIN__COMPLETED,
     payload: {
       id,
-      username
+      username,
+      token: idToken
     }
   });
 
@@ -89,7 +106,7 @@ export function *doLogoutRequested() {
     type: types.LOGOUT__COMPLETED
   });
 
-  // redirect to /
+  // redirect to
   yield put(
     push('/')
   );

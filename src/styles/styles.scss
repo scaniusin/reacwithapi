@@ -1,3 +1,40 @@
+* {
+  margin: 0; padding: 0;
+}
+
 .content-wrapper {
   margin-top: 40px;
+  z-index: 2;
+  position: relative;
+  color: white;
+}
+
+.main_container{
+
+  background: rgba(36, 71, 122, 0.8);
+  position: relative;
+}
+
+.video_container{
+  height: 100vh;
+  background: rgba(10, 37, 77, 0.71);
+  position: absolute;
+}
+
+.homepage_bg_video {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(10, 37, 77, 0.3);
 }

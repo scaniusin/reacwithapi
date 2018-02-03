@@ -20,7 +20,7 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run clean-dist && npm run lint && npm run test",
     "build": "babel-node tools/build.js && npm run open:dist",
-    "test": "mocha tools/testSetup.js \"./{,!(node_modules)/**/}*.spec.js\" --reporter progress",
+    "test": "jest --coverage",
     "test:cover": "babel-node node_modules/isparta/bin/isparta cover --root src --report html node_modules/mocha/bin/_mocha -- --require ./tools/testSetup.js \"./{,!(node_modules)/**/}*.spec.js\" --reporter progress",
     "test:cover:travis": "babel-node node_modules/isparta/bin/isparta cover --root src --report lcovonly _mocha -- --require ./tools/testSetup.js \"./{,!(node_modules)/**/}*.spec.js\" && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "test:watch": "npm run test -- --watch",
@@ -31,6 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
+    "font-awesome": "^4.7.0",
     "jwt-decode": "^2.1.0",
     "lodash": "^4.17.2",
     "object-assign": "4.1.0",
@@ -43,6 +44,7 @@
     "react-router-redux": "4.0.6",
     "reactstrap": "^3.9.3",
     "redux": "3.6.0",
+    "redux-auth-wrapper": "^1.0.0",
     "redux-form": "^6.2.0",
     "redux-saga": "^0.13.0",
     "whatwg-fetch": "^2.0.1"
@@ -76,10 +78,12 @@
     "eslint-plugin-react": "6.4.1",
     "eslint-watch": "2.1.14",
     "extract-text-webpack-plugin": "1.0.1",
+    "fetch-mock": "6.0.0",
     "file-loader": "0.9.0",
     "html-webpack-plugin": "2.24.0",
     "isparta": "4.0.0",
     "istanbul": "0.4.4",
+    "jest": "^18.0.0",
     "json-loader": "0.5.4",
     "mocha": "3.1.2",
     "mockdate": "1.0.4",
@@ -109,5 +113,10 @@
   "repository": {
     "type": "git",
     "url": ""
+  },
+  "jest": {
+    "globals": {
+      "API_BASE_URL": "blah"
+    }
   }
 }
