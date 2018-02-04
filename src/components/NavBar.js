@@ -10,7 +10,7 @@ let NavBar = (props) => {
     return auth.isAuthenticated ?
       <Nav className="float-xs-right" navbar>
         <NavItem className="navbar-text">
-          Welcome back {auth.username}
+          Welcome back <b>{auth.username}</b>
         </NavItem>
         <NavItem>
           <NavLink tag={Link} to="/profile">Profile</NavLink>
@@ -23,6 +23,9 @@ let NavBar = (props) => {
       :
 
       <Nav className="float-xs-right" navbar>
+        <NavItem>
+          <NavLink tag={Link} to="/register">Register</NavLink>
+        </NavItem>
         <NavItem>
           <NavLink tag={Link} to="/login">Log in</NavLink>
         </NavItem>

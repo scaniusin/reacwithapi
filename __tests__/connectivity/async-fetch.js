@@ -9,7 +9,7 @@ describe('asyncFetch', () => {
         fetchMock.restore();
     });
 
-    xit('can fetch', async () => {
+    it('can fetch', async () => {
 
         fetchMock.get('http://fake.com', {hello: "world"});
 
@@ -20,7 +20,7 @@ describe('asyncFetch', () => {
 
     });
 
-    xit('handles errors', async () => {
+    it('handles errors', async () => {
 
         fetchMock.get('http://bad.url', {
             status: 400,

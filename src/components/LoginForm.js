@@ -27,9 +27,10 @@ const LoginForm = (props) => {
               block
               color="success"
       >
-        {props.submitting ?
+        {props.isSubmitting ?
           <span>
-            <i className="fa fa-spin fa-spinner"/> Logging In...
+            <i className="fa fa-spin fa-spinner"/>
+            Logging In...
           </span>
 
           :
@@ -45,7 +46,8 @@ const LoginForm = (props) => {
 LoginForm.propTypes = {
   handleSubmit: React.PropTypes.func.isRequired,
   onSubmit: React.PropTypes.func.isRequired,
-  submitting: React.PropTypes.bool.isRequired
+  // submitting: React.PropTypes.bool.isRequired
+  isSubmitting: React.PropTypes.bool.isRequired,
 };
 
 export default reduxForm({

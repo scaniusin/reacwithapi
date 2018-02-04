@@ -4,6 +4,7 @@ import "babel-es6-polyfill";
 import NavBar from './NavBar';
 import { Container, Row } from 'reactstrap';
 import font from 'font-awesome/css/font-awesome.css';
+import NotificationContainer from '../containers/NotificationContainer';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -38,6 +39,8 @@ class App extends React.Component {
             {this.props.children}
           </Row>
         </Container>
+
+        <NotificationContainer />
       </div>
     );
   }

@@ -10,6 +10,7 @@ import LogoutPage from './containers/LogoutPage';
 import AboutPage from './components/AboutPage.js';
 import NotFoundPage from './components/NotFoundPage.js';
 import ProfilePage from './containers/ProfilePage';
+import RegistrationPage from './containers/RegistrationPage';
 
 // Redirects to /login by default
 const UserIsAuthenticated = UserAuthWrapper({
@@ -25,6 +26,7 @@ export default (
     <Route path="login" component={LoginPage}/>
     <Route path="logout" component={LogoutPage}/>
     <Route path="profile" component={UserIsAuthenticated(ProfilePage)}/>
+    <Route path="register" component={RegistrationPage}/>
     <Route path="about" component={AboutPage}/>
     <Route path="*" component={NotFoundPage}/>
   </Route>
