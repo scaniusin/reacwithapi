@@ -36,8 +36,17 @@ let NavBar = (props) => {
   return (
     <div>
       <Navbar color="inverse" dark full>
-        <NavbarBrand href="/">Our Cool App</NavbarBrand>
-        {loginOrProfile(props.auth)}
+        <NavbarBrand href="/">S&R-app</NavbarBrand>
+        <Nav navbar>
+          <NavItem className="float-xs-left">
+            <NavLink tag={Link} to="/">Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink tag={Link} to="/about">About</NavLink>
+          </NavItem>
+          {loginOrProfile(props.auth)}
+        </Nav>
+
       </Navbar>
     </div>
   );

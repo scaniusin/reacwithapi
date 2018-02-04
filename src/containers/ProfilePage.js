@@ -40,8 +40,8 @@ class ProfilePage extends React.Component {
   render() {
 
     const {
-      username = 'someone',
-      email = 'someone\'s@email.com'
+      username = '****',
+      email = '***\'***@***.***'
     } = this.props.pageState.profile;
 
     const isSubmitting = this.props.pageState.request.inProgress.indexOf(REQUESTS.PROFILE__DOCHANGEPASSWORD__SAGA) > -1;

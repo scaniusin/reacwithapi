@@ -6,43 +6,46 @@ import FormPasswordFields from './FormPasswordFields';
 
 const RegistrationForm = (props) => {
   return (
-    <form onSubmit={props.handleSubmit} className="form-registration col-md-4 offset-md-4">
+    <div className="col-md-4 offset-md-4">
+      <h3 className="text-xs-center">Register</h3>
+      <form onSubmit={props.handleSubmit} className="form-registration">
 
-      <Field component={FormField}
-             name="username"
-             type="text"
-             label="Username"
-             placeholder="Username"
-             required="required"
-             className="form-control"
-      />
+        <Field component={FormField}
+               name="username"
+               type="text"
+               label="Username"
+               placeholder="Username"
+               required="required"
+               className="form-control"
+        />
 
-      <Field component={FormField}
-             name="email"
-             type="email"
-             label="Email"
-             placeholder="Email"
-             required="required"
-             className="form-control"
-      />
+        <Field component={FormField}
+               name="email"
+               type="email"
+               label="Email"
+               placeholder="Email"
+               required="required"
+               className="form-control"
+        />
 
-      <Fields names={[ 'newPassword', 'newPasswordRepeated' ]} component={FormPasswordFields}/>
+        <Fields names={[ 'newPassword', 'newPasswordRepeated' ]} component={FormPasswordFields}/>
 
-      <Button type="submit"
-              size="lg"
-              block
-              color="success"
-      >
-        {props.isSubmitting ?
-          <span>
+        <Button type="submit"
+                size="lg"
+                block
+                color="success"
+        >
+          {props.isSubmitting ?
+            <span>
             <i className="fa fa-spin fa-spinner"/>
             Registering...
           </span>
-          :
-          <span>Register</span>
-        }
-      </Button>
-    </form>
+            :
+            <span>Register</span>
+          }
+        </Button>
+      </form>
+    </div>
   );
 
 };

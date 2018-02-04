@@ -46,7 +46,7 @@ export function *doLogin(action) {
     yield put({
       type: types.REQUEST__FINISHED,
       payload: {
-        sendingRequest: true
+        requestFrom: 'authSaga.doLogin'
       }
     });
 
@@ -92,12 +92,12 @@ export function *watchLoginSucceeded() {
 
 export function *doLoginFailed() {
   yield put({
-    type: types.ADD_NOTIFICATION,
-    payload: {
-      message: 'Check your user name and password, and try again.',
-      level: 'warning'
-    }
-  });
+        type: types.ADD_NOTIFICATION,
+        payload: {
+          message: 'Check your user name and password, and try again.',
+            level: 'warning'
+        }
+    });
 }
 
 export function *watchLoginFailed() {
@@ -112,7 +112,7 @@ export function *doLogoutRequested() {
     type: types.LOGOUT__COMPLETED
   });
 
-  // redirect to
+  // redirect to /
   yield put(
     push('/')
   );

@@ -4,41 +4,44 @@ import {Button} from 'reactstrap';
 
 const LoginForm = (props) => {
   return (
-    <form onSubmit={props.handleSubmit} className="form-signin col-md-4 offset-md-4">
+    <div className="col-md-4 offset-md-4">
+      <h3 className="text-xs-center">Login</h3>
+      <form onSubmit={props.handleSubmit} className="form-signin">
 
-      <Field component="input"
-             name="username"
-             type="text"
-             placeholder="Username or email address"
-             required="required"
-             className="form-control"
-      />
+        <Field component="input"
+               name="username"
+               type="text"
+               placeholder="Username or email address"
+               required="required"
+               className="form-control"
+        />
 
-      <Field component="input"
-             name="password"
-             type="password"
-             placeholder="Password"
-             required="required"
-             className="form-control"
-      />
+        <Field component="input"
+               name="password"
+               type="password"
+               placeholder="Password"
+               required="required"
+               className="form-control"
+        />
 
-      <Button type="submit"
-              size="lg"
-              block
-              color="success"
-      >
-        {props.isSubmitting ?
-          <span>
+        <Button type="submit"
+                size="lg"
+                block
+                color="success"
+        >
+          {props.isSubmitting ?
+            <span>
             <i className="fa fa-spin fa-spinner"/>
             Logging In...
           </span>
 
-          :
+            :
 
-          <span>Login</span>
-        }
-      </Button>
-    </form>
+            <span>Login</span>
+          }
+        </Button>
+      </form>
+    </div>
   );
 
 };
