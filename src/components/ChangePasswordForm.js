@@ -6,7 +6,7 @@ import FormPasswordFields from './FormPasswordFields';
 
 const ChangePasswordForm = (props) => {
   return (
-    <form   className="form-change-password ">
+    <form onSubmit={props.handleSubmit}  className="form-change-password ">
 
       <Field component={FormField}
              name="currentPassword"
