@@ -34,4 +34,15 @@
   bottom: 0;
   background: rgba(10, 37, 77, 0.3); }
 
+.starter-template {
+  padding: 40px 15px;
+  text-align: center; }
+
+.social-metric-count {
+  font-size: 26px;
+  text-align: center; }
+
+.list-group-item {
+  min-height: 60px; }
+
 /*# sourceMappingURL=styles.css.map */
