@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
-import * as types from '../constants/actionTypes';
-import RegistrationForm from '../components/RegistrationForm';
+import * as types from '../../constants/actionTypes';
+import RegistrationForm from '../../components/User/RegistrationForm';
 // import '../styles/registration-page.scss';
 
 class RegistrationPage extends Component {

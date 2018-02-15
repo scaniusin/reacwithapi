@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import * as types from '../constants/actionTypes';
+import * as types from '../../constants/actionTypes';
 
 class LogoutPage extends Component {
 

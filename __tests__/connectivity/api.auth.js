@@ -1,6 +1,6 @@
 jest.mock('../../src/connectivity/async-fetch.js');
 
-import * as api from '../../src/connectivity/api.auth';
+import * as api from '../../src/connectivity/user/api.auth';
 
 
 describe('API Auth', () => {

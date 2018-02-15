@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import {connect} from 'react-redux';
 import "babel-es6-polyfill";
-import NavBar from './NavBar';
+import NavBar from '../Navbar/index';
 import { Container, Row } from 'reactstrap';
-import font from 'font-awesome/css/font-awesome.css';
-import NotificationContainer from '../containers/NotificationContainer';
+import font from 'font-awesome/css/font-awesome.css'; //for spinner
+import NotificationContainer from '../../containers/NotificationContainer';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -13,23 +13,11 @@ class App extends React.Component {
 
   constructor (props) {
     super(props);
-
-    this.state = {
-      videoURL: '../static/video/bg.mp4'
-    };
   }
 
   render() {
     return (
-      <div className="main_container">
-
-        <div className="video_container">
-          <video className="homepage_bg_video" loop autoPlay muted poster="../static/img/bg.jpg" >
-            <source src={this.state.videoURL} type="video/mp4" />
-          </video>
-          <div className="overlay">  </div>
-        </div>
-
+      <div className="app">
         <NavBar
           auth={this.props.auth}
         />

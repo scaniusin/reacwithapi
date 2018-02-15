@@ -1,7 +1,8 @@
 import {fork} from 'redux-saga/effects';
-import * as authSaga from './auth.saga';
-import * as profileSaga from './profile.saga';
-import * as registrationSaga from './register.saga';
+import * as authSaga from './user/auth.saga';
+import * as profileSaga from './user/profile.saga';
+import * as registrationSaga from './user/register.saga';
+import * as blogPostSaga from './blog/list.blog.saga';
 
 export default function *rootSaga() {
   yield [
@@ -19,5 +20,10 @@ export default function *rootSaga() {
     fork(registrationSaga.watchRequestRegistration),
     fork(registrationSaga.watchRegistrationFailed),
     fork(registrationSaga.watchRegistrationSuccess),
+
+    fork(blogPostSaga.watchRequestBlogPost),
+    fork(blogPostSaga.watchRequestBlogPosts),
+    fork(blogPostSaga.watchDeleteBlogPost),
+    fork(blogPostSaga.watchEditBlogPost),
   ];
 }

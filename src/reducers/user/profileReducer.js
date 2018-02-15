@@ -1,6 +1,6 @@
 import {
   PROFILE__REQUESTED__SUCCEEDED
-} from '../constants/actionTypes';
+} from '../../constants/actionTypes';
 
 
 export default function profile(state = {

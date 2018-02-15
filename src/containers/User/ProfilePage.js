@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import ProfileArea from '../components/ProfileArea';
-import ChangePasswordForm from '../components/ChangePasswordForm';
-import * as types from '../constants/actionTypes';
-import {REQUESTS} from '../sagas/profile.saga'
+import ProfileArea from '../../components/User/ProfileArea';
+import ChangePasswordForm from '../../components/User/ChangePasswordForm';
+import * as types from '../../constants/actionTypes';
+import {REQUESTS} from '../../sagas/user/profile.saga';
 
 class ProfilePage extends React.Component {
 

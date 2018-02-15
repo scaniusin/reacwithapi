@@ -9,36 +9,6 @@
   color: white;
 }
 
-.main_container{
-
-  background: rgba(36, 71, 122, 0.8);
-  position: relative;
-}
-
-.video_container{
-  height: 100vh;
-  background: rgba(10, 37, 77, 0.71);
-  position: absolute;
-}
-
-.homepage_bg_video {
-  position: relative;
-  width: 100%;
-  z-index: 0;
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.overlay {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(10, 37, 77, 0.3);
-}
-
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -52,3 +22,97 @@
 .list-group-item {
   min-height: 60px;
 }
+
+.table-title{
+  min-width: 450px;
+}
+
+.jumbotron {
+  background: transparent;
+}
+hr {
+   border-top: 1px solid #ddd;
+}
+
+.app{
+  background-color: #1d4477;
+  background: url(../static/img/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url(../static/img/bg.jpg) center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+
+
+//.main_container{
+//  background: rgba(36, 71, 122, 0.8);
+//  position: relative;
+//}
+//
+//.video_container{
+//  height: 100vh;
+//  background: rgba(10, 37, 77, 0.71);
+//  position: absolute;
+//}
+//
+//.homepage_bg_video {
+//  position: relative;
+//  width: 100%;
+//  z-index: 0;
+//  left: 50%; top: 50%;
+//  transform: translate(-50%, -50%);
+//}
+//
+//.overlay {
+//  position: absolute;
+//  z-index: 1;
+//  top: 0;
+//  right: 0;
+//  left: 0;
+//  bottom: 0;
+//  background: rgba(10, 37, 77, 0.3);
+//}

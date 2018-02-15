@@ -1,9 +1,9 @@
-import * as api from '../connectivity/api.register';
+import * as api from '../../connectivity/user/api.register';
 import {call, put} from 'redux-saga/effects';
 import {takeLatest} from 'redux-saga';
-import * as types from '../constants/actionTypes';
+import * as types from '../../constants/actionTypes';
 import {stopSubmit} from 'redux-form';
-import formErrorHelper from '../helpers/formErrorHelper';
+import formErrorHelper from '../../helpers/formErrorHelper';
 
 
 export const REQUESTS = {
@@ -75,7 +75,7 @@ export function *watchRequestRegistration() {
 
 export function *doRegistrationSucceeded(action) {
 
-  console.log('doRegistrationSucceeded', action);
+  // console.log('doRegistrationSucceeded', action);
 
   yield [
     put({

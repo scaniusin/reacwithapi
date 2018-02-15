@@ -1,4 +1,4 @@
-import * as types from '../constants/actionTypes';
+import * as types from '../../constants/actionTypes';
 
 export default function auth(state = {
   isAuthenticated: false,

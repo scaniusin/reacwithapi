@@ -1,5 +1,5 @@
-import asyncFetch from './async-fetch';
-import {getBaseRequestConfig} from './baseRequestConfig';
+import asyncFetch from '../async-fetch';
+import {getBaseRequestConfig} from '../baseRequestConfig';
 
 export async function login(username, password) {
 

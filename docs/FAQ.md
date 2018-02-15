@@ -160,7 +160,7 @@ Nope. Redux is useful for applications with more complex data flows. If your app
 ### How do I remove React Router?
  1. Uninstall React Router and routing related packages: `npm uninstall --save react-router`
  2. Delete the following files: `src/routes.js`
- 3. Remove `import { Link, IndexLink } from 'react-router';` from top of `src/components/App.js`, add a reference to `src/components/FuelSavingsForm.js`, and replace body of (implicit) render with this: `<FuelSavingsPage />`.
+ 3. Remove `import { Link, IndexLink } from 'react-router';` from top of `src/components/index.js`, add a reference to `src/components/FuelSavingsForm.js`, and replace body of (implicit) render with this: `<FuelSavingsPage />`.
 
 ### How do I deploy this?
 `npm run build`. This will build the project for production. It does the following:

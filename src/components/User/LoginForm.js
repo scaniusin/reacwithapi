@@ -31,12 +31,10 @@ const LoginForm = (props) => {
         >
           {props.isSubmitting ?
             <span>
-            <i className="fa fa-spin fa-spinner"/>
-            Logging In...
-          </span>
-
+              <i className="fa fa-spin fa-spinner"/>
+              Logging In...
+            </span>
             :
-
             <span>Login</span>
           }
         </Button>

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
-import LoginForm from '../components/LoginForm';
-import * as types from '../constants/actionTypes';
-import '../styles/login-page.scss';
+import LoginForm from '../../components/User/LoginForm';
+import * as types from '../../constants/actionTypes';
+import '../../styles/login-page.scss';
 
 class LoginPage extends Component {
 

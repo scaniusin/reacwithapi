@@ -1,9 +1,9 @@
-import * as api from '../connectivity/api.profile';
+import * as api from '../../connectivity/user/api.profile';
 import {call, put} from 'redux-saga/effects';
 import {takeLatest} from 'redux-saga';
-import * as types from '../constants/actionTypes';
+import * as types from '../../constants/actionTypes';
 import {stopSubmit} from 'redux-form';
-import formErrorHelper from '../helpers/formErrorHelper';
+import formErrorHelper from '../../helpers/formErrorHelper';
 
 
 export const REQUESTS = {

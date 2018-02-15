@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {Navbar, NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
-import '../styles/navbar.scss';
+import '../../styles/navbar.scss';
 
 let NavBar = (props) => {
 
@@ -36,10 +36,15 @@ let NavBar = (props) => {
   return (
     <div>
       <Navbar color="inverse" dark full>
-        <NavbarBrand href="/">S&R-app</NavbarBrand>
+        <NavbarBrand tag={Link} to="/">
+          S&R-app
+        </NavbarBrand>
         <Nav navbar>
           <NavItem className="float-xs-left">
             <NavLink tag={Link} to="/">Home</NavLink>
+          </NavItem>
+          <NavItem className="float-xs-left">
+            <NavLink tag={Link} to="/posts">Posts</NavLink>
           </NavItem>
           <NavItem>
             <NavLink tag={Link} to="/about">About</NavLink>

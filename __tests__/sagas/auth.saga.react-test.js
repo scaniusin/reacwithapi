@@ -1,7 +1,7 @@
-import * as authSaga from '../../src/sagas/auth.saga';
+import * as authSaga from '../../src/sagas/user/auth.saga';
 import * as types from '../../src/constants/actionTypes';
 import {call, put} from 'redux-saga/effects';
-import * as api from '../../src/connectivity/api.auth';
+import * as api from '../../src/connectivity/user/api.auth';
 
 describe('Auth Saga', () => {
 
@@ -27,11 +27,13 @@ describe('Auth Saga', () => {
         })
       );
 
+
       expect(
         generator.next().value
       ).toEqual(
         call(api.login, 'bob', 'testpass')
       );
+
 
       let fakeResponseBody = { token: 'some-token' };
 
@@ -46,22 +48,25 @@ describe('Auth Saga', () => {
         })
       );
 
+
       expect(
         generator.next().value
       ).toEqual(
         put({
           type: types.REQUEST__FINISHED,
           payload: {
-            sendingRequest: true
+            requestFrom: 'authSaga.doLogin'
           }
         })
       );
+
 
       expect(
         generator.next().done
       ).toBeTruthy();
 
     });
+
 
     it('throws when a call to api.login fails', () => {
 
@@ -110,7 +115,7 @@ describe('Auth Saga', () => {
         put({
           type: types.REQUEST__FINISHED,
           payload: {
-            sendingRequest: true
+            requestFrom: 'authSaga.doLogin'
           }
         })
       );
@@ -161,13 +166,14 @@ describe('Auth Saga', () => {
         })
       );
 
+
       expect(
         generator.next().value
       ).toEqual(
         put({
           type: types.REQUEST__FINISHED,
           payload: {
-            sendingRequest: true
+            requestFrom: 'authSaga.doLogin'
           }
         })
       );
@@ -176,5 +182,7 @@ describe('Auth Saga', () => {
         generator.next().done
       ).toBeTruthy();
     });
+
   });
+
 });

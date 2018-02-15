@@ -1,9 +1,9 @@
-import * as api from '../connectivity/api.auth';
+import * as api from '../../connectivity/user/api.auth';
 import {call, put} from 'redux-saga/effects';
 import {takeLatest} from 'redux-saga';
 import jwtDecode from 'jwt-decode';
 import {push} from 'react-router-redux';
-import * as types from '../constants/actionTypes';
+import * as types from '../../constants/actionTypes';
 
 export function *doLogin(action) {
 
@@ -57,12 +57,6 @@ export function *doLogin(action) {
 export function *watchLogin() {
   yield takeLatest(types.LOGIN__REQUESTED, doLogin);
 }
-
-
-
-
-
-
 
 export function *doLoginSucceeded(action) {
 
