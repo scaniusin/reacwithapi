@@ -26,7 +26,7 @@ export default {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'), // Tells React to build in either dev or prod modes. https://facebook.github.io/react/downloads.html (See bottom)
       __DEV__: true,
-        API_BASE_URL: JSON.stringify('http://127.0.0.1:8000/app_acceptance.php')
+        API_BASE_URL: JSON.stringify('https://backend-symfony.herokuapp.com')
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
