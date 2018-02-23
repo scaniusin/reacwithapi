@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+/* global API_BASE_URL */
 
 export function fetchBlogPost(id) {
   return fetch(API_BASE_URL + '/posts/' + id, {

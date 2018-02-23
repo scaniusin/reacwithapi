@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import "babel-es6-polyfill";
 import NavBar from '../Navbar/index';
 import { Container, Row } from 'reactstrap';
-import font from 'font-awesome/css/font-awesome.css'; //for spinner
+import 'font-awesome/css/font-awesome.css'; //for spinner
 import NotificationContainer from '../../containers/NotificationContainer';
 
 // This is a class-based component because the current

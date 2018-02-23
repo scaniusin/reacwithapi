@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 
 const Form = React.createClass({
 
@@ -6,7 +6,7 @@ const Form = React.createClass({
     return {
       body: this.props.body || 'some body',
       title: this.props.title || 'some title'
-    }
+    };
   },
 
   componentWillReceiveProps(props) {
@@ -57,7 +57,7 @@ const Form = React.createClass({
             </div>
           </div>
           <div className="form-group">
-            <div className="col-sm-2"></div>
+            <div className="col-sm-2"/>
             <div className="col-sm-10">
               <button type="submit"
                       id="blog_post_submit"
@@ -71,5 +71,10 @@ const Form = React.createClass({
     );
   }
 });
+
+Form.PropTypes = {
+  body: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
+};
 
 export default Form;

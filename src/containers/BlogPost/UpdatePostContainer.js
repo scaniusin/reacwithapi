@@ -12,7 +12,6 @@ class Update extends React.Component {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
-
     // this.state = {
     //   blogPost : []
     // };
@@ -52,7 +51,7 @@ class Update extends React.Component {
         data
       }
     });
-    this.props.router.push('/').bind(this);
+    this.props.router.push('/posts').bind(this);
   }
 
   render() {
@@ -66,7 +65,6 @@ class Update extends React.Component {
       title = "Loading...";
       body = "Loading...";
     }
-
 
     return (
       <div>

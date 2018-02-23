@@ -71,7 +71,7 @@ export function *watchRequestBlogPost() {
   yield* takeLatest(types.BLOGPOST__REQUESTED, doRequestBlogPost);
 }
 
-export function *doRequestBlogPosts(action) {
+export function *doRequestBlogPosts() {
 
   try {
 

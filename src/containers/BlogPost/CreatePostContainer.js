@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Form from '../../components/BlogPost/Form';
 import {createBlogPost} from '../../connectivity/blog/api.blog-post';
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 
 export default class Create extends Component {
 
@@ -13,9 +13,9 @@ export default class Create extends Component {
 
   handleSubmit(data) {
     createBlogPost(data)
-    .then(res => {
-        this.props.router.push("/").bind(this);
-      });
+    .then(() => {
+        this.props.router.push("/posts").bind(this);
+    });
   }
 
   render() {

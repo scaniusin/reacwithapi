@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from "react-redux";
-import {fetchBlogPosts, deleteBlogPost} from '../../connectivity/blog/api.blog-post';
+// import {fetchBlogPosts, deleteBlogPost} from '../../connectivity/blog/api.blog-post';
 import Table from '../../components/BlogPost/Table';
 import * as types from '../../constants/actionTypes';
 import {REQUESTS} from '../../sagas/blog/list.blog.saga'
