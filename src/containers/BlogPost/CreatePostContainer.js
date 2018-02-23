@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component, PropTypes} from 'react';
 import Form from '../../components/BlogPost/Form';
 import {createBlogPost} from '../../connectivity/blog/api.blog-post';
 // import { withRouter } from 'react-router';
@@ -14,15 +14,20 @@ export default class Create extends Component {
   handleSubmit(data) {
     createBlogPost(data)
     .then(() => {
-        this.props.router.push("/posts").bind(this);
+        this.props.router.push("/posts");
     });
   }
 
   render() {
     return (
       <div>
-        <Form onSubmit={this.handleSubmit.bind(this)}>  </Form>
+        <Form onSubmit={this.handleSubmit}/>
       </div>
     );
   }
 }
+
+Create.propTypes = {
+  router: PropTypes.func.isRequired,
+  push: PropTypes.func.isRequired,
+};

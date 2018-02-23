@@ -51,7 +51,7 @@ class Update extends React.Component {
         data
       }
     });
-    this.props.router.push('/posts').bind(this);
+    this.props.router.push('/posts');
   }
 
   render() {
@@ -71,7 +71,7 @@ class Update extends React.Component {
         <Form onSubmit={this.handleSubmit.bind(this)}
               title={title}
               body={body}
-        ></Form>
+        />
       </div>
     );
   }
@@ -81,6 +81,8 @@ Update.propTypes = {
   dispatch: PropTypes.func.isRequired,
   pageState: PropTypes.object.isRequired,
   router: React.PropTypes.object.isRequired,
+  blogPost: PropTypes.object.isRequired,
+  params: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {

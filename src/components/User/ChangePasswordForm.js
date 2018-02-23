@@ -38,7 +38,7 @@ const ChangePasswordForm = (props) => {
 ChangePasswordForm.propTypes = {
   isSubmitting: React.PropTypes.bool.isRequired,
   onSubmit: React.PropTypes.func.isRequired,
-  // handleSubmit: React.PropTypes.func.isRequired,
+  handleSubmit: React.PropTypes.func.isRequired,
 };
 
 export default reduxForm({

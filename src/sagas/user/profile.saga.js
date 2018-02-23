@@ -78,7 +78,7 @@ export function *doChangePassword(action) {
       }
     });
 
-    const responseBody = yield call(api.changePassword, userId, currentPassword, newPassword, newPasswordRepeated)
+    const responseBody = yield call(api.changePassword, userId, currentPassword, newPassword, newPasswordRepeated);
 
     yield put({
       type: types.CHANGE_PASSWORD__SUCCEEDED,
@@ -129,13 +129,13 @@ export function *doChangePasswordSucceeded(action) {
     }
   });
 
-  console.log('doChangePasswordSucceeded - would have added notification!', {
-    message: action.payload.message,
-  });
+  // console.log('doChangePasswordSucceeded - would have added notification!', {
+  //   message: action.payload.message,
+  // });
 }
 
 export function *watchChangePasswordSucceeded() {
-  yield* takeLatest(types.CHANGE_PASSWORD__SUCCEEDED, doChangePasswordSucceeded)
+  yield* takeLatest(types.CHANGE_PASSWORD__SUCCEEDED, doChangePasswordSucceeded);
 }
 
 export function *doChangePasswordFailed(action) {

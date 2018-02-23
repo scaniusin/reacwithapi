@@ -22,7 +22,7 @@ class RegistrationPage extends Component {
         newPassword,
         newPasswordRepeated
       }
-    })
+    });
   }
 
   render() {

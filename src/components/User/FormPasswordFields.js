@@ -43,4 +43,4 @@ const renderFormPasswordFields = (fields) => {
 };
 
 
-export default renderFormPasswordFields
+export default renderFormPasswordFields;

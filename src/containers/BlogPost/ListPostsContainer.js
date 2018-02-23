@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 // import {fetchBlogPosts, deleteBlogPost} from '../../connectivity/blog/api.blog-post';
 import Table from '../../components/BlogPost/Table';
 import * as types from '../../constants/actionTypes';
-import {REQUESTS} from '../../sagas/blog/list.blog.saga'
+import {REQUESTS} from '../../sagas/blog/list.blog.saga';
 
 class List extends Component {
 
@@ -83,6 +83,7 @@ List.propTypes = {
   dispatch: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   pageState: PropTypes.object.isRequired,
+  blogPosts: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {

@@ -105,7 +105,6 @@ export function *watchRegistrationSuccess() {
 
 export function *doRegistrationFailed(action) {
 
-  console.log('doRegistrationFailed', action);
   const errorData = action.payload.response;
 
   const [username, email, newPassword, newPasswordRepeated] = [
@@ -120,9 +119,9 @@ export function *doRegistrationFailed(action) {
     email,
     newPassword,
     newPasswordRepeated,
-  }))
+  }));
 }
 
 export function *watchRegistrationFailed() {
-  yield *takeLatest(types.REGISTRATION__REQUESTED__FAILED, doRegistrationFailed)
+  yield *takeLatest(types.REGISTRATION__REQUESTED__FAILED, doRegistrationFailed);
 }

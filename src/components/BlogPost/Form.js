@@ -1,34 +1,38 @@
 import React, { PropTypes } from 'react';
 
-const Form = React.createClass({
+class Form extends React.Component{
 
-  getInitialState() {
-    return {
-      body: this.props.body || 'some body',
-      title: this.props.title || 'some title'
+  constructor (props) {
+    super(props);
+    this.state = {
+      title: 'New Title',
+      body: 'New Body'
     };
-  },
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleBodyChange = this.handleBodyChange.bind(this);
+  }
 
   componentWillReceiveProps(props) {
     this.setState(props);
-  },
+  }
 
   handleBodyChange(e) {
     this.setState({
       body: e.target.value
     });
-  },
+  }
 
   handleTitleChange(e) {
     this.setState({
       title: e.target.value
     });
-  },
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.onSubmit(this.state);
-  },
+  }
 
   render() {
     return (
@@ -70,7 +74,7 @@ const Form = React.createClass({
       </form>
     );
   }
-});
+}
 
 Form.PropTypes = {
   body: PropTypes.string.isRequired,

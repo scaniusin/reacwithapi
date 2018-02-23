@@ -46,7 +46,7 @@ const Table = (props) => {
                         <Link to={`/posts/update/${post.id}`} className="btn btn-default btn-sm">Edit</Link>
                         <btn onClick={props.onDelete.bind(this, post.id)} className="btn btn-danger btn-sm">Delete</btn>
                       </td>
-                    ): <td> </td>
+                    ): <td/>
                   }
                 </tr>);
             })}
@@ -63,7 +63,8 @@ Table.propTypes = {
   auth: PropTypes.object.isRequired,
   onDelete: PropTypes.func.isRequired,
   isSubmitting: React.PropTypes.bool.isRequired,
-  // blogPosts: PropTypes.array.isRequired
+  blogPosts: PropTypes.array.isRequired,
+  map: PropTypes.func.isRequired
 };
 
 export default Table;
