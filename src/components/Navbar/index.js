@@ -13,15 +13,16 @@ let NavBar = (props) => {
           Welcome back <b>{auth.username}</b>
         </NavItem>
         <NavItem>
+          <NavLink tag={Link} to="/wallet">Wallet</NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink tag={Link} to="/profile">Profile</NavLink>
         </NavItem>
         <NavItem>
           <NavLink tag={Link} to="/logout">Logout</NavLink>
         </NavItem>
       </Nav>
-
       :
-
       <Nav className="float-xs-right" navbar>
         <NavItem>
           <NavLink tag={Link} to="/register">Register</NavLink>
@@ -31,7 +32,6 @@ let NavBar = (props) => {
         </NavItem>
       </Nav>;
   };
-
 
   return (
     <div>
@@ -48,6 +48,9 @@ let NavBar = (props) => {
           </NavItem>
           <NavItem>
             <NavLink tag={Link} to="/about">About</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink tag={Link} to="/explorer"><font color="#3AC1EF">Explorer</font></NavLink>
           </NavItem>
           {loginOrProfile(props.auth)}
         </Nav>

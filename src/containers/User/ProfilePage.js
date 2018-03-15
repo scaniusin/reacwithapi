@@ -43,6 +43,7 @@ class ProfilePage extends React.Component {
       username = '****',
       email = '***\'***@***.***'
     } = this.props.pageState.profile;
+    console.log(this.props.pageState.profile);
 
     const isSubmitting = this.props.pageState.request.inProgress.indexOf(REQUESTS.PROFILE__DOCHANGEPASSWORD__SAGA) > -1;
 

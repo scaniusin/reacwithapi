@@ -27,8 +27,16 @@
   min-width: 450px;
 }
 
-.jumbotron {
+.jumbotron-main {
   background: transparent;
+}
+.transactions{
+  background: #1d4477;
+  color: white;
+  overflow: hidden;
+}
+.break-word{
+  word-wrap: break-word;
 }
 hr {
    border-top: 1px solid #ddd;

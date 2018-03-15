@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import Form from '../../components/BlogPost/Form';
-// import { fetchBlogPost, updateBlogPost } from '../../connectivity/blog/api.blog-post';
-// import { withRouter } from 'react-router';
 import * as types from "../../constants/actionTypes";
 import {connect} from "react-redux";
+// import { fetchBlogPost, updateBlogPost } from '../../connectivity/blog/api.blog-post';
+// import { withRouter } from 'react-router';
 // import {REQUESTS} from "../../sagas/blog/list.blog.saga";
 
 class Update extends React.Component {

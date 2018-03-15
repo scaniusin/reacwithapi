@@ -17,6 +17,12 @@ import Create from './containers/BlogPost/CreatePostContainer';
 import Update from './containers/BlogPost/UpdatePostContainer';
 import PostsPage from './containers/BlogPost/ListPostsContainer';
 
+import ExplorerPage from './containers/Blockchain/ExplorerContainer';
+import BlockPage from './containers/Blockchain/BlockContainer';
+import AddressPage from './containers/Blockchain/AddressContainer';
+import TransactionPage from './containers/Blockchain/TransactionContainer';
+import WalletPage from './containers/Blockchain/WalletContainer';
+
 // Redirects to /login by default
 const UserIsAuthenticated = UserAuthWrapper({
     authSelector: state => state.auth, // how to get the user state
@@ -29,14 +35,23 @@ export default (
   <Route path="/" component={App}>
     {/*/!*<IndexRedirect to="/posts"/>*!/ redirects to the specified page*/}
     <IndexRoute component={HomePage}/>
+    <Route path="about" component={AboutPage}/>
+
     <Route path="/posts/create" component={withRouter(Create)}/>
     <Route path="/posts/update/:postId" component={withRouter(Update)}/>
     <Route path="posts" component={PostsPage}/>
+
     <Route path="login" component={LoginPage}/>
     <Route path="logout" component={LogoutPage}/>
     <Route path="profile" component={UserIsAuthenticated(ProfilePage)}/>
     <Route path="register" component={RegistrationPage}/>
-    <Route path="about" component={AboutPage}/>
+
+    <Route path="explorer" component={ExplorerPage}/>
+    <Route path="explorer/block/:hash" component={BlockPage}/>
+    <Route path="explorer/address/:address" component={AddressPage}/>
+    <Route path="explorer/transaction/:transaction" component={TransactionPage}/>
+    <Route path="wallet" component={UserIsAuthenticated(WalletPage)}/>
+
     <Route path="*" component={NotFoundPage}/>
   </Route>
 );
