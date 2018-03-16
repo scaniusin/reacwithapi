@@ -1,12 +1,10 @@
 import React, {Component, PropTypes} from 'react';
-import {Link} from 'react-router';
 import {
-  fetchMyAddress,
   fetchMyBalance,
   fetchTransactionPool,
   fetchMineBlock,
   fetchsendTransaction,
-  fetchKeyPair, fetchAddress
+  fetchKeyPair
 } from '../../connectivity/blockchain/api.blockchain';
 import {createUpdateWallet, fetchMyWalletAddress} from '../../connectivity/blockchain/api.wallet';
 import WalletPersonal from '../../components/Blockchain/WalletPersonal';
@@ -114,9 +112,7 @@ class Wallet extends Component {
 
   assignWalletAddress($publicAddress){
     createUpdateWallet(this.props.pageState.auth.id, $publicAddress)
-      .then((data) => {
-
-      })
+      .then()
       .catch((err) => {
         console.error('err', err);
       });

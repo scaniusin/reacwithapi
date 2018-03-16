@@ -1,6 +1,5 @@
 import React from 'react';
 import { get_time } from '../../utils';
-import {Link} from 'react-router';
 import TransactionList from "./TransactionList";
 
 const Block = (props) => {
