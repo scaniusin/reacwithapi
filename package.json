@@ -1,5 +1,5 @@
 {
-  "name": "react-registration",
+  "name": "react-blockchain-project",
   "version": "0.1.0",
   "description": "",
   "engines": {
@@ -10,8 +10,8 @@
     "setup": "node tools/setup/setupMessage.js && yarn install && node tools/setup/setup.js",
     "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
-    "prestart": "start-message && remove-dist",
-    "start": "test:watch && open:src && lint:watch",
+    "prestart": "npm-run-all --parallel start-message remove-dist",
+    "start": "npm-run-all --parallel test:watch open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node tools/distServer.js",
     "lint": "esw webpack.config.* src tools --color",
@@ -49,7 +49,8 @@
     "redux-auth-wrapper": "^1.0.0",
     "redux-form": "^6.2.0",
     "redux-saga": "^0.13.0",
-    "whatwg-fetch": "^2.0.1"
+    "whatwg-fetch": "^2.0.1",
+    "npm-run-all": "3.1.1"
   },
   "devDependencies": {
     "autoprefixer": "6.5.1",
