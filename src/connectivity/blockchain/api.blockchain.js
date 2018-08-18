@@ -1,6 +1,9 @@
 import fetch from 'isomorphic-fetch';
-const API_BASE_URL_BLOCKCHAIN = 'http://localhost:3001';
-// const API_BASE_URL_BLOCKCHAIN = 'https://typescript-blockchain.herokuapp.com';
+// DEV
+// const API_BASE_URL_BLOCKCHAIN = 'http://localhost:3001';
+// PROD
+const API_BASE_URL_BLOCKCHAIN = 'http://18.184.11.118:3002';
+
 // /* global API_BASE_URL */
 export function fetchBlocks() {
   return fetch(API_BASE_URL_BLOCKCHAIN + '/blocks', {

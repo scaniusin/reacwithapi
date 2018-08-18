@@ -10,7 +10,10 @@ import path from 'path';
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
   __DEV__: false,
-  API_BASE_URL: JSON.stringify('http://127.0.0.1:8000')
+  //  DEV
+  // API_BASE_URL: JSON.stringify('http://127.0.0.1:8000')
+  //   PROD
+  API_BASE_URL: JSON.stringify('http://18.184.11.118')
 };
 
 export default {

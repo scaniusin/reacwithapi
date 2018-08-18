@@ -23,7 +23,7 @@ const Table = (props) => {
         :
         <div className="row">
           <br/><br/>
-          {props.blogPosts && props.blogPosts.map((post, i) => {
+          {props.blogPosts && props.blogPosts.map((post) => {
             return (
               <div className="row" key={post.id}>
                 <div className="col-sm-1">
