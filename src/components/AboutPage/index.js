@@ -8,11 +8,16 @@ const AboutPage = () => {
     <div>
       <h2 className="alt-header">About</h2>
       <p>
-        This example app is part of the <a href="https://github.com/coryhouse/react-slingshot">React-Slingshot
-        starter kit</a>.
+          This is an example of CRUD application between Symfony Framework - ReactJs - MySQL
       </p>
       <p>
-        <Link to="/badlink">Click this bad link</Link> to see the 404 page.
+          Also, you can send/receive coins and see the BlockChain explorer.
+      </p>
+      <p>
+        This example app is part of the <a href="https://github.com/coryhouse/react-slingshot">React-Slingshot starter kit</a>.
+      </p>
+      <p>
+        <Link to="/badlink" target="_blank">Click this bad link</Link> to see the 404 page.
       </p>
     </div>
   );

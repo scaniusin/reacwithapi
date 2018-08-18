@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
-// const API_BASE_URL_BLOCKCHAIN = 'http://localhost:3001';
-const API_BASE_URL_BLOCKCHAIN = 'https://typescript-blockchain.herokuapp.com';
+const API_BASE_URL_BLOCKCHAIN = 'http://localhost:3001';
+// const API_BASE_URL_BLOCKCHAIN = 'https://typescript-blockchain.herokuapp.com';
 // /* global API_BASE_URL */
 export function fetchBlocks() {
   return fetch(API_BASE_URL_BLOCKCHAIN + '/blocks', {
@@ -79,7 +79,7 @@ export function fetchMineBlock() {
 export function fetchsendTransaction(data) {
   return fetch(API_BASE_URL_BLOCKCHAIN + '/sendTransaction', {
     method: 'POST',
-    mode: 'CORS',
+    mode: 'cors',
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'

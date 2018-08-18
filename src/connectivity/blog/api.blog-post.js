@@ -20,7 +20,7 @@ export function fetchBlogPosts() {
 export function createBlogPost(data) {
   return fetch(API_BASE_URL + '/posts', {
     method: 'POST',
-    mode: 'CORS',
+    mode: 'cors',
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ export function createBlogPost(data) {
 export function updateBlogPost(id, data) {
   return fetch(API_BASE_URL + '/posts/' + id, {
     method: 'PUT',
-    mode: 'CORS',
+    mode: 'cors',
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ export function updateBlogPost(id, data) {
 export function deleteBlogPost(id) {
   return fetch(API_BASE_URL + '/posts/' + id, {
     method: 'DELETE',
-    mode: 'CORS'
+    mode: 'cors'
   }).then(res => res)
   .catch(err => err);
 }

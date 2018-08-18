@@ -10,7 +10,7 @@ import path from 'path';
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
   __DEV__: false,
-  API_BASE_URL: JSON.stringify('https://backend-symfony.herokuapp.com')
+  API_BASE_URL: JSON.stringify('http://127.0.0.1:8000')
 };
 
 export default {

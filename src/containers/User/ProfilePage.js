@@ -41,7 +41,8 @@ class ProfilePage extends React.Component {
 
     const {
       username = '****',
-      email = '***\'***@***.***'
+      email = '***\'***@***.***',
+      id = 1
     } = this.props.pageState.profile;
     console.log(this.props.pageState.profile);
 
@@ -49,7 +50,7 @@ class ProfilePage extends React.Component {
 
     return (
       <div className="col-md-4 offset-md-4">
-        <ProfileArea username={username} emailAddress={email}/>
+        <ProfileArea username={username} emailAddress={email} id={id}/>
         <ChangePasswordForm
           isSubmitting={isSubmitting}
           onSubmit={this.handleChangePassword.bind(this)} />
