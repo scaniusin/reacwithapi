@@ -29,7 +29,7 @@ const Table = (props) => {
                 <div className="col-sm-1">
                     <div className="thumbnail">
                         {/*<img className="img-thumbnail user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"/>*/}
-                        <img className="img-thumbnail user-photo" src={"https://picsum.photos/60/60/?" + post.id}/>
+                        <img className="img-thumbnail user-photo" src={"https://picsum.photos/60/60/?" + post.uid}/>
                     </div>
                 </div>
 

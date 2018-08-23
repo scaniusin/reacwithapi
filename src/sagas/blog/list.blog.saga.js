@@ -200,7 +200,7 @@ export function *doEditBlogPost(action) {
 
   try {
 
-    const {id, data} = action.payload;
+    const {id, data, uid} = action.payload;
 
     yield put({
       type: types.REQUEST__STARTED,
@@ -209,7 +209,7 @@ export function *doEditBlogPost(action) {
       }
     });
 
-    const responseBody = yield call(api.updateBlogPost, id, data);
+    const responseBody = yield call(api.updateBlogPost, id, data, uid);
 
     yield put({
       type: types.BLOGPOST__EDITED__SUCCEEDED,

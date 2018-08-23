@@ -35,7 +35,6 @@ class Update extends React.Component {
         id: this.props.params.postId
       }
     });
-
   }
 
   handleSubmit(data) {
@@ -48,14 +47,15 @@ class Update extends React.Component {
       type: types.BLOGPOST__EDITED__REQUESTED,
       payload: {
         id: this.props.params.postId,
-        data
+        data,
+        uid: this.props.pageState.auth.id
       }
     });
     this.props.router.push('/posts');
   }
 
   render() {
-
+    console.log(this.props.blogPost);
     let title = '';
     let body = '';
     if(this.props.blogPost){
